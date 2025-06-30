@@ -5,7 +5,7 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node server.js"
+    "start": "vercel dev"
   },
   "dependencies": {
     "dukascopy-node": "^3.2.0",
