@@ -1,14 +1,9 @@
 {
-  "name": "dukascopy-proxy",
+  "name": "dukascopy-vercel",
   "version": "1.0.0",
-  "description": "Dukascopy data proxy for frontend chart",
-  "main": "server.js",
+  "description": "Dukascopy data proxy for Vercel",
   "type": "commonjs",
-  "scripts": {
-    "start": "vercel dev"
-  },
   "dependencies": {
-    "dukascopy-node": "^3.2.0",
-    "express": "^4.19.2"
+    "dukascopy-node": "^3.2.0"
   }
 }
