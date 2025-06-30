@@ -4,6 +4,6 @@
   "description": "Dukascopy data proxy for Vercel",
   "type": "commonjs",
   "dependencies": {
-    "dukascopy-node": "^3.2.0"
-  }
+  "dukascopy-node": "1.43"
+}
 }
