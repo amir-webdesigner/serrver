@@ -1,0 +1,14 @@
+{
+  "name": "dukascopy-proxy",
+  "version": "1.0.0",
+  "description": "Dukascopy data proxy for frontend chart",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dukascopy-node": "^3.2.0",
+    "express": "^4.19.2"
+  }
+}
