@@ -16,8 +16,8 @@ res.setHeader('Access-Control-Allow-Origin', '*');
     const data = await getHistoricalRates({
       instrument: instrument.toLowerCase(),
       dates: {
-        from: new Date(from),
-        to: new Date(to),
+        from: from,
+        to: to,
       },
       timeframe: timeframe,
       format: 'json',
