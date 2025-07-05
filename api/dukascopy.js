@@ -1,7 +1,8 @@
 const { getHistoricalRates } = require('dukascopy-node');
 
 module.exports = async function handler(req, res) {
-res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
   if (req.method !== 'GET') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
@@ -13,15 +14,26 @@ res.setHeader('Access-Control-Allow-Origin', '*');
   }
 
   try {
+    const now = Date.now();
+    const fromDate = new Date(from);
+    let toDate = new Date(to);
+
+    // Clamp `to` if it's in the future (e.g., now + 2s or more)
+    if (toDate.getTime() > now) {
+      console.warn(`[Dukascopy API] Clamping 'to' time from ${toDate.toISOString()} to ${new Date(now).toISOString()}`);
+      toDate = new Date(now);
+    }
+
     const data = await getHistoricalRates({
       instrument: instrument.toLowerCase(),
       dates: {
-        from: new Date(from),
-        to: new Date(to),
+        from: fromDate,
+        to: toDate,
       },
       timeframe: timeframe,
       format: 'json',
     });
+
     res.json(data);
   } catch (err) {
     console.error(err);
