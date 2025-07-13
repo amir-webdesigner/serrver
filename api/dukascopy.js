@@ -31,8 +31,8 @@ module.exports = async function handler(req, res) {
         to: toDate,
       },
       timeframe: timeframe,
-      batchSize: 12,
-      pauseBetweenBatchesMs: 1000,
+      batchSize: 20,
+      pauseBetweenBatchesMs: 500,
       format: 'json',
     });
 
